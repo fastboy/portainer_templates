@@ -23,7 +23,7 @@
 					"set": "Europe/Stockholm"
 				}
 			],
-			"image": "puteulanus/tinyfilemanager",
+			"image": "fastboy/tinyfilemanager",
 			"logo": "https://thumbs.dreamstime.com/b/multiple-file-document-icon-logo-design-element-multiple-file-document-icon-logo-design-element-white-background-122728126.jpg",
 			"platform": "linux",
 			"ports": [
