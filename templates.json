@@ -5,6 +5,42 @@
 			"category": [
 				"Other"
 			],
+			"description": "filus managus - maly",
+			"env": [
+				{
+					"label": "PGID",
+					"name": "PGID",
+					"set": "1000"
+				},
+				{
+					"label": "PUID",
+					"name": "PUID",
+					"set": "1000"
+				},
+				{
+					"label": "TZ",
+					"name": "TZ",
+					"set": "Europe/Stockholm"
+				}
+			],
+			"image": "puteulanus/tinyfilemanager",
+			"logo": "https://thumbs.dreamstime.com/b/multiple-file-document-icon-logo-design-element-multiple-file-document-icon-logo-design-element-white-background-122728126.jpg",
+			"platform": "linux",
+			"ports": [
+				"8080/tcp"
+			],
+			"title": "TinyFiles",
+			"type": 1,
+			"volumes": [
+				{
+					"container": "/web/file/"
+				}
+			]
+		},
+		{
+			"category": [
+				"Other"
+			],
 			"description": "A clientless remote desktop gateway. The default login will be guacadmin/guacadmin. It is common practice to add a new admin user and remove the default user for Guacamole.",
 			"env": [
 				{
