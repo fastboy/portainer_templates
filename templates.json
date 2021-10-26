@@ -2,6 +2,42 @@
 	"version": "2",
 	"templates": [
 		{
+			"category": [
+				"Other"
+			],
+			"description": "kms-server, self-hosted alternative windows activation service",
+			"env": [
+				{
+					"label": "PGID",
+					"name": "PGID",
+					"set": "1000"
+				},
+				{
+					"label": "PUID",
+					"name": "PUID",
+					"set": "1000"
+				},
+				{
+					"label": "TZ",
+					"name": "TZ",
+					"set": "Europe/Stockholm"
+				}
+			],
+			"image": "teddysun/kms",
+			"logo": "https://images.squarespace-cdn.com/content/5a998dc170e802cad2c2df59/1523560614219-DTEWEHUZ4C8GY8LJR1PP/KMS_Logo.png?format=1500w&content-type=image%2Fpng",
+			"platform": "linux",
+			"ports": [
+				"1688/tcp"
+			],
+			"title": "KMS",
+			"type": 1,
+			"volumes": [
+				{
+					"container": "/data"
+				}
+			]
+		},
+		{
 			"category": "Other",
 			"description": "Adguard Home",
 			"env": [
