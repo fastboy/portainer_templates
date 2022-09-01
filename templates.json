@@ -1,499 +1,6 @@
 {
 	"version": "2",
 	"templates": [
-		
-		{
-			"category": "Other",
-			"description": "Adguard Home",
-			"env": [
-				{
-					"label": "PGID",
-					"name": "PGID",
-					"set": "1000"
-				},
-				{
-					"label": "PUID",
-					"name": "PUID",
-					"set": "1000"
-				},
-				{
-					"label": "TZ",
-					"name": "TZ",
-					"set": "Europe/Stockholm"
-				}
-			],
-			"image": "adguard/adguardhome",
-			"logo": "https://developer.asustor.com/uploadIcons/0020_999_1616120577_AdGuardhome_256.png",
-			"platform": "linux",
-			"ports": [
-				"53/tcp",
-				"53/udp",
-				"67/tcp",
-				"67/udp",
-				"68/tcp",
-				"68/udp",
-				"80/tcp",
-				"443/tcp",
-				"853/tcp",
-				"853/udp",
-				"3000/tcp"
-			],
-			"title": "Adguard",
-			"type": 1,
-			"volumes": [
-				{
-					"/opt/adguardhome/conf": "/opt/adguardhome/work"
-				}
-			]
-		},
-		{
-			"category": [
-				"Other"
-			],
-			"description": "filus managus - maly",
-			"env": [
-				{
-					"label": "PGID",
-					"name": "PGID",
-					"set": "1000"
-				},
-				{
-					"label": "PUID",
-					"name": "PUID",
-					"set": "1000"
-				},
-				{
-					"label": "TZ",
-					"name": "TZ",
-					"set": "Europe/Stockholm"
-				}
-			],
-			"image": "fastboy/tinyfilemanager",
-			"logo": "https://thumbs.dreamstime.com/b/multiple-file-document-icon-logo-design-element-multiple-file-document-icon-logo-design-element-white-background-122728126.jpg",
-			"platform": "linux",
-			"ports": [
-				"8080/tcp"
-			],
-			"title": "TinyFiles",
-			"type": 1,
-			"volumes": [
-				{
-					"container": "/web/file/"
-				}
-			]
-		},
-		{
-			"type": 1,
-			"title": "MySQL",
-			"description": "The most popular open-source database",
-			"categories": [
-				"database"
-			],
-			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mysql.png",
-			"image": "mysql:latest",
-			"env": [{
-				"name": "MYSQL_ROOT_PASSWORD",
-				"label": "Root password"
-			}],
-			"ports": [
-				"3306/tcp"
-			],
-			"volumes": [{
-				"container": "/var/lib/mysql"
-			}]
-		},
-		{
-			"type": 1,
-			"title": "MariaDB",
-			"description": "Performance beyond MySQL",
-			"categories": [
-				"database"
-			],
-			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mariadb.png",
-			"image": "mariadb:latest",
-			"env": [{
-				"name": "MYSQL_ROOT_PASSWORD",
-				"label": "Root password"
-			}],
-			"ports": [
-				"3306/tcp"
-			],
-			"volumes": [{
-				"container": "/var/lib/mysql"
-			}]
-		},
-		{
-			"type": 1,
-			"title": "PostgreSQL",
-			"description": "The most advanced open-source database",
-			"categories": [
-				"database"
-			],
-			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/postgres.png",
-			"image": "postgres:latest",
-			"env": [{
-					"name": "POSTGRES_USER",
-					"label": "Superuser"
-				},
-				{
-					"name": "POSTGRES_PASSWORD",
-					"label": "Superuser password"
-				}
-			],
-			"ports": [
-				"5432/tcp"
-			],
-			"volumes": [{
-				"container": "/var/lib/postgresql/data"
-			}]
-		},
-		{
-			"type": 1,
-			"title": "Mongo",
-			"description": "Open-source document-oriented database",
-			"categories": [
-				"database"
-			],
-			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mongo.png",
-			"image": "mongo:latest",
-			"ports": [
-				"27017/tcp"
-			],
-			"volumes": [{
-				"container": "/data/db"
-			}]
-		},
-		{
-			"type": 1,
-			"title": "Joomla",
-			"description": "Another free and open-source CMS",
-			"categories": [
-				"CMS"
-			],
-			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/joomla.png",
-			"image": "joomla:latest",
-			"env": [{
-					"name": "JOOMLA_DB_HOST",
-					"label": "MySQL database host",
-					"type": "container"
-				},
-				{
-					"name": "JOOMLA_DB_PASSWORD",
-					"label": "Database password"
-				}
-			],
-			"ports": [
-				"80/tcp"
-			],
-			"volumes": [{
-				"container": "/var/www/html"
-			}]
-		},
-		{
-			"type": 1,
-			"title": "Drupal",
-			"description": "Open-source content management framework",
-			"categories": [
-				"CMS"
-			],
-			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/drupal.png",
-			"image": "drupal:latest",
-			"ports": [
-				"80/tcp"
-			],
-			"volumes": [{
-				"container": "/var/www/html"
-			}]
-		},
-		{
-			"type": 1,
-			"title": "Plone",
-			"description": "A free and open-source CMS built on top of Zope",
-			"categories": [
-				"CMS"
-			],
-			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/plone.png",
-			"image": "plone:latest",
-			"ports": [
-				"8080/tcp"
-			],
-			"volumes": [{
-				"container": "/data"
-			}]
-		},
-		{
-			"type": 1,
-			"title": "Magento 2",
-			"description": "Open-source e-commerce platform",
-			"categories": [
-				"CMS"
-			],
-			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/magento.png",
-			"image": "alankent/gsd:latest",
-			"ports": [
-				"80/tcp",
-				"3000/tcp",
-				"3001/tcp"
-			],
-			"volumes": [{
-				"container": "/var/www/html/"
-			}]
-		},
-		{
-			"type": 1,
-			"title": "Redmine",
-			"description": "Open-source project management tool",
-			"categories": [
-				"project-management"
-			],
-			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/redmine.png",
-			"image": "redmine:latest",
-			"ports": [
-				"3000/tcp"
-			],
-			"volumes": [{
-				"container": "/usr/src/redmine/files"
-			}]
-		},
-		{
-			"type": 1,
-			"title": "Odoo",
-			"description": "Open-source business apps",
-			"categories": [
-				"project-management"
-			],
-			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/odoo.png",
-			"image": "odoo:latest",
-			"env": [{
-					"name": "HOST",
-					"label": "PostgreSQL database host",
-					"type": "container"
-				},
-				{
-					"name": "USER",
-					"label": "Database user"
-				},
-				{
-					"name": "PASSWORD",
-					"label": "Database password"
-				}
-			],
-			"ports": [
-				"8069/tcp"
-			],
-			"volumes": [{
-					"container": "/var/lib/odoo"
-				},
-				{
-					"container": "/mnt/extra-addons"
-				}
-			]
-		},
-		{
-			"type": 1,
-			"title": "Urbackup",
-			"description": "Open-source network backup",
-			"categories": [
-				"backup"
-			],
-			"platform": "linux",
-			"note": "This application web interface is exposed on the port 55414 inside the container.",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/urbackup.png",
-			"image": "cfstras/urbackup",
-			"ports": [
-				"55413/tcp",
-				"55414/tcp",
-				"55415/tcp",
-				"35622/tcp"
-			],
-			"volumes": [{
-				"container": "/var/urbackup"
-			}]
-		},
-		{
-			"type": 1,
-			"title": "File browser",
-			"description": "A web file manager",
-			"note": "Default credentials: admin/admin",
-			"categories": [
-				"filesystem",
-				"storage"
-			],
-			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/filebrowser.png",
-			"image": "filebrowser/filebrowser:latest",
-			"ports": [
-				"80/tcp"
-			],
-			"volumes": [{
-					"container": "/data"
-				},
-				{
-					"container": "/srv"
-				}
-			],
-			"command": "--port 80 --database /data/database.db --root /srv"
-		},
-		{
-			"type": 2,
-			"title": "Portainer Agent",
-			"description": "Manage all the resources in your Swarm cluster",
-			"note": "The agent will be deployed globally inside your cluster and available on port 9001.",
-			"categories": [
-				"portainer"
-			],
-			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/portainer.png",
-			"repository": {
-				"url": "https://github.com/portainer/templates",
-				"stackfile": "stacks/portainer-agent/docker-stack.yml"
-			}
-		},
-		{
-			"type": 2,
-			"title": "OpenFaaS",
-			"name": "func",
-			"description": "Serverless functions made simple",
-			"note": "Deploys the API gateway and sample functions. You can access the UI on port 8080. <b>Warning</b>: the name of the stack must be 'func'.",
-			"categories": [
-				"serverless"
-			],
-			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/openfaas.png",
-			"repository": {
-				"url": "https://github.com/openfaas/faas",
-				"stackfile": "docker-compose.yml"
-			}
-		},
-		{
-			"type": 2,
-			"title": "IronFunctions",
-			"description": "Open-source serverless computing platform",
-			"note": "Deploys the IronFunctions API and UI.",
-			"categories": [
-				"serverless"
-			],
-			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/ironfunctions.png",
-			"repository": {
-				"url": "https://github.com/portainer/templates",
-				"stackfile": "stacks/ironfunctions/docker-stack.yml"
-			}
-		},
-
-		{
-			"type": 2,
-			"title": "Wordpress",
-			"description": "Wordpress setup with a MySQL database",
-			"note": "Deploys a Wordpress instance connected to a MySQL database.",
-			"categories": [
-				"CMS"
-			],
-			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
-			"repository": {
-				"url": "https://github.com/portainer/templates",
-				"stackfile": "stacks/wordpress/docker-stack.yml"
-			},
-			"env": [{
-				"name": "MYSQL_DATABASE_PASSWORD",
-				"label": "Database root password",
-				"description": "Password used by the MySQL root user."
-			}]
-		},
-		{
-			"type": 3,
-			"title": "Wordpress",
-			"description": "Wordpress setup with a MySQL database",
-			"note": "Deploys a Wordpress instance connected to a MySQL database.",
-			"categories": [
-				"CMS"
-			],
-			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
-			"repository": {
-				"url": "https://github.com/portainer/templates",
-				"stackfile": "stacks/wordpress/docker-compose.yml"
-			},
-			"env": [{
-				"name": "MYSQL_DATABASE_PASSWORD",
-				"label": "Database root password",
-				"description": "Password used by the MySQL root user."
-			}]
-		},
-		{
-			"type": 2,
-			"title": "Microsoft OMS Agent",
-			"description": "Microsoft Operations Management Suite Linux agent.",
-			"categories": [
-				"OPS"
-			],
-			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/microsoft.png",
-			"repository": {
-				"url": "https://github.com/portainer/templates",
-				"stackfile": "stacks/microsoft-oms/docker-stack.yml"
-			},
-			"env": [{
-					"name": "AZURE_WORKSPACE_ID",
-					"label": "Workspace ID",
-					"description": "Azure Workspace ID"
-				},
-				{
-					"name": "AZURE_PRIMARY_KEY",
-					"label": "Primary key",
-					"description": "Azure primary key"
-				}
-			]
-		},
-		{
-			"title": "Sematext Docker Agent",
-			"type": 2,
-			"categories": [
-				"Log Management",
-				"Monitoring"
-			],
-			"description": "Collect logs, metrics and docker events",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/sematext_agent.png",
-			"platform": "linux",
-			"repository": {
-				"url": "https://github.com/portainer/templates",
-				"stackfile": "stacks/sematext-agent-docker/docker-stack.yml"
-			},
-			"env": [{
-					"name": "LOGSENE_TOKEN",
-					"label": "Logs token"
-				},
-				{
-					"name": "SPM_TOKEN",
-					"label": "SPM monitoring token"
-				}
-			]
-		},
-		{
-	    "type": 4,
-	    "title": "Wordpress",
-	    "description": "Wordpress setup with a MySQL database",
-	    "note": "Deploys a Wordpress instance connected to a MySQL database.",
-	    "stackfile": "https://raw.githubusercontent.com/portainer/templates/master/stacks/wordpress/edge/docker-stack.yml"
-	  },
-	  {
-	    "type": 4,
-	    "title": "CockroachDB",
-	    "description": "CockroachDB cluster",
-	    "note": "Deploys an insecure CockroachDB cluster, please refer to <a href=\"https://www.cockroachlabs.com/docs/stable/orchestrate-cockroachdb-with-docker-swarm.html\" target=\"_blank\">CockroachDB documentation</a> for production deployments.",
-	    "stackfile": "https://raw.githubusercontent.com/portainer/templates/master/stacks/cockroachdb/edge/docker-stack.yml"
-	  },
 		{
 			"category": [
 				"Video",
@@ -622,6 +129,45 @@
 		},
 		{
 			"category": [
+				"Management"
+			],
+			"description": "Smokeping keeps track of your network latency.",
+			"env": [
+				{
+					"label": "PUID",
+					"name": "PUID",
+					"set": "1000"
+				},
+				{
+					"label": "PGID",
+					"name": "PGID",
+					"set": "1000"
+				},
+				{
+					"label": "TZ",
+					"name": "TZ",
+					"set": "America/Chicago"
+				}
+			],
+			"image": "linuxserver/smokeping:latest",
+			"logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/smokeping-icon.png",
+			"platform": "linux",
+			"ports": [
+				"80/tcp"
+			],
+			"title": "smokeping",
+			"type": 1,
+			"volumes": [
+				{
+					"container": "/config"
+				},
+				{
+					"container": "/data"
+				}
+			]
+		},
+		{
+			"category": [
 				"DNS",
 				"Tools"
 			],
@@ -658,6 +204,313 @@
 			"platform": "linux",
 			"title": "duckdns",
 			"type": 1
+		},
+		{
+			"category": [
+				"Downloaders"
+			],
+			"description": "WebGrab+Plus is a multi-site incremental xmltv epg grabber. It collects tv-program guide data from selected tvguide sites for your favourite channels.Optional postprocessors to add IMDb data, or to customize your xmltv listing.",
+			"env": [
+				{
+					"label": "PUID",
+					"name": "PUID",
+					"set": "1000"
+				},
+				{
+					"label": "PGID",
+					"name": "PGID",
+					"set": "1000"
+				},
+				{
+					"label": "TZ",
+					"name": "TZ",
+					"set": "America/Chicago"
+				}
+			],
+			"image": "linuxserver/webgrabplus:latest",
+			"logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/webgrabplus.png",
+			"platform": "linux",
+			"title": "webgrabplus",
+			"type": 1,
+			"volumes": [
+				{
+					"container": "/config"
+				},
+				{
+					"container": "/data"
+				}
+			]
+		},
+		{
+			"category": [
+				"HomeAutomation:",
+				"Management"
+			],
+			"description": "Domoticz is a Home Automation System that lets you monitor and configure various devices like: Lights, Switches, various sensors/meters like Temperature, Rain, Wind, UV, Electra, Gas, Water and much more. Notifications/Alerts can be sent to any mobile device",
+			"devices": [
+				{
+					"path to device": ""
+				}
+			],
+			"env": [
+				{
+					"label": "PUID",
+					"name": "PUID",
+					"set": "1000"
+				},
+				{
+					"label": "PGID",
+					"name": "PGID",
+					"set": "1000"
+				},
+				{
+					"label": "TZ",
+					"name": "TZ",
+					"set": "America/Chicago"
+				}
+			],
+			"image": "linuxserver/domoticz:latest",
+			"logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/logo.png",
+			"platform": "linux",
+			"ports": [
+				"1443/tcp",
+				"6144/tcp",
+				"8080/tcp"
+			],
+			"title": "domoticz",
+			"type": 1,
+			"volumes": [
+				{
+					"container": "/config"
+				}
+			]
+		},
+		{
+			"category": [
+				"Downloaders"
+			],
+			"description": "Transmission is designed for easy, powerful use. Transmission has the features you want from a BitTorrent client: encryption, a web interface, peer exchange, magnet links, DHT, ï¿½TP, UPnP and NAT-PMP port forwarding, webseed support, watch directories, tracker editing, global and per-torrent speed limits, and more.",
+			"env": [
+				{
+					"label": "PUID",
+					"name": "PUID",
+					"set": "1000"
+				},
+				{
+					"label": "PGID",
+					"name": "PGID",
+					"set": "1000"
+				},
+				{
+					"label": "TZ",
+					"name": "TZ",
+					"set": "America/Chicago"
+				}
+			],
+			"image": "linuxserver/transmission:latest",
+			"logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/transmission-icon.png",
+			"platform": "linux",
+			"ports": [
+				"9091/tcp",
+				"51413/tcp",
+				"51413/udp"
+			],
+			"title": "transmission",
+			"type": 1,
+			"volumes": [
+				{
+					"container": "/config"
+				},
+				{
+					"container": "/downloads"
+				},
+				{
+					"container": "/watch"
+				}
+			]
+		},
+		{
+			"category": [
+				"Music"
+			],
+			"description": "Libresonic is a free, web-based media streamer, providing ubiqutious access to your music. Use it to share your music with friends, or to listen to your own music while at work. You can stream to multiple players simultaneously, for instance to one player in your kitchen and another in your living room. /music = Location of music. /media = Location of other media. /podcasts = Location of podcasts. /playlists = Location for playlists storage. CONTEXT_PATH is for setting url-base in reverse proxy setups - (optional) Default user/pass is admin/admin",
+			"env": [
+				{
+					"label": "CONTEXT_PATH",
+					"name": "CONTEXT_PATH",
+					"set": ""
+				},
+				{
+					"label": "PUID",
+					"name": "PUID",
+					"set": "1000"
+				},
+				{
+					"label": "PGID",
+					"name": "PGID",
+					"set": "1000"
+				},
+				{
+					"label": "TZ",
+					"name": "TZ",
+					"set": "America/Chicago"
+				}
+			],
+			"image": "linuxserver/libresonic:latest",
+			"logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/libresonic.png",
+			"platform": "linux",
+			"ports": [
+				"4040/tcp"
+			],
+			"title": "libresonic",
+			"type": 1,
+			"volumes": [
+				{
+					"container": "/music"
+				},
+				{
+					"container": "/playlists"
+				},
+				{
+					"container": "/podcasts"
+				},
+				{
+					"container": "/media"
+				},
+				{
+					"container": "/config"
+				}
+			]
+		},
+		{
+			"category": [
+				"Downloaders",
+				"Video"
+			],
+			"description": "Sickchill is an Automatic Video Library Manager for TV Shows. It watches for new episodes of your favorite shows, and when they are posted it does its magic.",
+			"env": [
+				{
+					"label": "PGID",
+					"name": "PGID",
+					"set": "1000"
+				},
+				{
+					"label": "PUID",
+					"name": "PUID",
+					"set": "1000"
+				},
+				{
+					"label": "TZ",
+					"name": "TZ",
+					"set": "America/Chicago"
+				}
+			],
+			"image": "linuxserver/sickchill:latest",
+			"logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/sickchill.png",
+			"platform": "linux",
+			"ports": [
+				"8081/tcp"
+			],
+			"title": "sickchill",
+			"type": 1,
+			"volumes": [
+				{
+					"container": "/config"
+				},
+				{
+					"container": "/downloads"
+				},
+				{
+					"container": "/tv"
+				}
+			]
+		},
+		{
+			"category": [
+				"Music",
+				"Other",
+				"Tools"
+			],
+			"description": " MusicBrainz is an open music encyclopedia that collects music metadata and makes it available to the public.",
+			"env": [
+				{
+					"label": "BRAINZCODE",
+					"name": "BRAINZCODE",
+					"set": ""
+				},
+				{
+					"label": "WEBADDRESS",
+					"name": "WEBADDRESS",
+					"set": ""
+				},
+				{
+					"label": "PGID",
+					"name": "PGID",
+					"set": "1000"
+				},
+				{
+					"label": "PUID",
+					"name": "PUID",
+					"set": "1000"
+				},
+				{
+					"label": "TZ",
+					"name": "TZ",
+					"set": "America/Chicago"
+				}
+			],
+			"image": "linuxserver/musicbrainz:latest",
+			"logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/musicbrainz-icon.png",
+			"platform": "linux",
+			"ports": [
+				"5000/tcp"
+			],
+			"title": "musicbrainz",
+			"type": 1,
+			"volumes": [
+				{
+					"container": "/config"
+				},
+				{
+					"container": "/data"
+				}
+			]
+		},
+		{
+			"category": [
+				"Messenger"
+			],
+			"description": "Quassel IRC is a modern, cross-platform, distributed IRC client, meaning that one (or multiple) client(s) can attach to and detach from a central core -- much like the popular combination of screen and a text-based IRC client such as WeeChat, but graphical. Blowfish support and optional web-ui included.",
+			"env": [
+				{
+					"label": "PGID",
+					"name": "PGID",
+					"set": "1000"
+				},
+				{
+					"label": "PUID",
+					"name": "PUID",
+					"set": "1000"
+				},
+				{
+					"label": "TZ",
+					"name": "TZ",
+					"set": "America/Chicago"
+				}
+			],
+			"image": "linuxserver/quassel-core:latest",
+			"logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/quassel-core-icon.png",
+			"platform": "linux",
+			"ports": [
+				"4242/tcp"
+			],
+			"title": "quassel-core",
+			"type": 1,
+			"volumes": [
+				{
+					"container": "/config"
+				}
+			]
 		},
 		{
 			"category": [
@@ -698,6 +551,42 @@
 				},
 				{
 					"container": "/config"
+				}
+			]
+		},
+		{
+			"category": [
+				"Music"
+			],
+			"description": "DAAP (iTunes) media server with support for AirPlay devices, Apple Remote (and compatibles), MPD and internet radio.",
+			"env": [
+				{
+					"label": "PUID",
+					"name": "PUID",
+					"set": "1000"
+				},
+				{
+					"label": "PGID",
+					"name": "PGID",
+					"set": "1000"
+				},
+				{
+					"label": "TZ",
+					"name": "TZ",
+					"set": "America/Chicago"
+				}
+			],
+			"image": "linuxserver/daapd:latest",
+			"logo": "https://raw.githubusercontent.com/linuxserver/beta-templates/master/lsiodev/img/daapd-icon.png",
+			"platform": "linux",
+			"title": "daapd",
+			"type": 1,
+			"volumes": [
+				{
+					"container": "/config"
+				},
+				{
+					"container": "/music"
 				}
 			]
 		},
@@ -769,6 +658,43 @@
 				"80/tcp"
 			],
 			"title": "codiad",
+			"type": 1,
+			"volumes": [
+				{
+					"container": "/config"
+				}
+			]
+		},
+		{
+			"category": [
+				"Other"
+			],
+			"description": "OScam is a softcam, software to be used to decrypt digital television channels on a settopbox (receiver), as an alternative for a conditional access module (CAM). OScam is, compared with other softcams (CCcam, mgcamd, etc.), open source. Hence, the name Open Source Conditional Access Module (OScam). OScam is based on the not so well known softcam MpCS. The main features of OSCam are next to its softcam capabilities, that it is able to function as a cardserver.",
+			"env": [
+				{
+					"label": "PGID",
+					"name": "PGID",
+					"set": "1000"
+				},
+				{
+					"label": "PUID",
+					"name": "PUID",
+					"set": "1000"
+				},
+				{
+					"label": "TZ",
+					"name": "TZ",
+					"set": "America/Chicago"
+				}
+			],
+			"image": "linuxserver/oscam:latest",
+			"logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/oscam.png",
+			"platform": "linux",
+			"ports": [
+				"8888/tcp",
+				"10000/tcp"
+			],
+			"title": "oscam",
 			"type": 1,
 			"volumes": [
 				{
